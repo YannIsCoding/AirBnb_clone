@@ -68,13 +68,23 @@ User.create!(
   )
 puts 'User: IT IS DONE'
 
+
 10.times do
   date = Date.today+rand(10000) #for future dates
   Booking.create!(
     start_date: date,
     end_date: date + 10,
     user_id: User.all.sample.id,
-    flat_id: Flat.all.sample.id
+    flat_id: Flat.all.sample.id,
     )
 end
 puts 'Booking: IT IS DONE'
+
+count = 1
+10.times do
+  Review.create!(content: 'Superbe review!',
+                 rating: rand(1..5),
+                 booking_id: count)
+  count += 1
+end
+puts 'Review: IT IS DONE'

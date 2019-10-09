@@ -1,0 +1,8 @@
+<h1>Review for <%= @booking.flat.name %></h1>
+
+
+<%= simple_form_for [@booking, @review] do |f| %>
+<%= f.input :content,label: 'content' %>
+<%= f.input :rating, label: 'rating', collection: [1,2,3,4,5], :input_html => {class: 'round-form' } %>
+<%= f.button :submit, class: 'btn-action' %>
+<% end %>
