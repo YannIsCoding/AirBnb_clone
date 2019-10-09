@@ -62,4 +62,19 @@ User.create!(
   email: 'andy@lorem.epislom',
   password: '123456'
   )
+User.create!(
+  email: 'momo@lorem.epislom',
+  password: '123456'
+  )
 puts 'User: IT IS DONE'
+
+10.times do
+  date = Date.today+rand(10000) #for future dates
+  Booking.create!(
+    start_date: date,
+    end_date: date + 10,
+    user_id: User.all.sample.id,
+    flat_id: Flat.all.sample.id
+    )
+end
+puts 'Booking: IT IS DONE'

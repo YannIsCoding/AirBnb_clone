@@ -1,0 +1,9 @@
+<h1>Booking for flat <%= @flat.name %></h1>
+
+<%= simple_form_for [@flat, @booking] do |f| %>
+<%= f.input :start_date,label: 'start date', input_html: { class: 'round-form' } %>
+<%= f.input :end_date,label: 'end date', input_html: { class: 'round-form' } %>
+<%= f.button :submit, class: 'btn-action' %>
+<% end %>
+
+

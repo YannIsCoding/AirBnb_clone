@@ -7,3 +7,6 @@
 <p><%= @flat.price_per_night %> euro</p>
 <p>Number of guests: <%= @flat.number_of_guests %></p>
 <%= cl_image_tag @flat.photo, height: 300, width: 400, crop: :fill %>
+
+
+<%= link_to 'BOOK DAT FLAT!', new_flat_booking_path(@flat)  %>
