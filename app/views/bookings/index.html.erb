@@ -1,0 +1,13 @@
+<h1>List of booking for <%= current_user.email %></h1>
+
+<ul>
+  <% @bookings.each do |booking| %>
+    <li>
+      Booking N<%= booking.id %> <br>
+      email: <%= booking.user.email %><br>
+      Flat:  <%= booking.flat.name %><br>
+      start date:  <%= booking.start_date.strftime("%d/%m/%Y") %><br>
+      end date: <%= booking.end_date.strftime("%d/%m/%Y") %>
+    </li>
+  <% end %>
+</ul>
