@@ -10,3 +10,9 @@
 
 
 <%= link_to 'BOOK DAT FLAT!', new_flat_booking_path(@flat)  %>
+
+<h2>Reviews!</h2>
+<% @reviews.each do |review| %>
+   number of stars: <%= review.rating %> <br>
+  content: <%= review.content %> <br>
+<% end %>

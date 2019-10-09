@@ -1,5 +1,14 @@
-<h1>This is the booking! YAY!</h1>
+<h1>This is the booking for the <%= @booking.flat.name %>! YAY!</h1>
 
 <%= @booking.id %>
 <%= @booking.start_date %>
 <%= @booking.end_date %>
+
+<% if @booking.review.nil? %>
+  <%= link_to 'Leave a review', new_booking_review_path(@booking)  %>
+<% else %>
+  <h3>This is your review! :</h3>
+  Rating: <%= @booking.review.rating %> <br>
+  Content: <%= @booking.review.content %>
+<% end %>
+
